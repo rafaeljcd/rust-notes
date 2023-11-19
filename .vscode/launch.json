@@ -5,41 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "lldb",
+            "name": "Run Rust File",
             "request": "launch",
-            "name": "Debug executable 'rust-notes'",
-            "cargo": {
-                "args": [
-                    "build",
-                    "--bin=rust-notes",
-                    "--package=rust-notes"
-                ],
-                "filter": {
-                    "name": "rust-notes",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
             "type": "lldb",
-            "request": "launch",
-            "name": "Debug unit tests in executable 'rust-notes'",
-            "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--bin=rust-notes",
-                    "--package=rust-notes"
-                ],
-                "filter": {
-                    "name": "rust-notes",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
+            "console": "integratedTerminal",
+            "program": "target/test/${relativeFileDirname}/${fileBasenameNoExtension}",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Setup and Build Rust file"
         }
-    ]
+    ],
 }

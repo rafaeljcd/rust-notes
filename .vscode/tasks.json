@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Setup directory",
+            "type": "shell",
+            "command": "mkdir -p target/test/${relativeFileDirname}",
+        },
+        {
+            "label": "Build Rust File",
+            "type": "shell",
+            "command": "rustc ${file} --out-dir target/test/${relativeFileDirname}/",
+        },
+        {
+            "label": "Setup and Build Rust file",
+            "dependsOn": [
+                "Setup directory",
+                "Build Rust File"
+            ]
+        }
+    ]
+}

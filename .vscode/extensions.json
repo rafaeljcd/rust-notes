@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "oderwat.indent-rainbow",
+        "tamasfe.even-better-toml",
+        "rust-lang.rust-analyzer"
+    ]
+}
